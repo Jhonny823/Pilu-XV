@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XV Pilu | 31.10.2026</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">MIS QUINCE AÑOS</p>
+
+            <h1>XV Pilu</h1>
+
+            <p class="phrase">
+                Hay momentos que se guardan para siempre.<br>
+                Quiero compartir esta noche tan especial contigo.
+            </p>
+
+            <div class="star">✦</div>
+
+            <p class="main-date">31 · 10 · 26</p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CUENTA REGRESIVA
+    ========================== -->
+    <section class="section countdown-section">
+
+        <p class="section-small">FALTA MUY POCO</p>
+
+        <h2>Cuenta regresiva</h2>
+
+        <div id="countdown" class="countdown">
+
+            <div class="count-box">
+                <span id="days">00</span>
+                <small>Días</small>
+            </div>
+
+            <div class="count-box">
+                <span id="hours">00</span>
+                <small>Horas</small>
+            </div>
+
+            <div class="count-box">
+                <span id="minutes">00</span>
+                <small>Minutos</small>
+            </div>
+
+            <div class="count-box">
+                <span id="seconds">00</span>
+                <small>Segundos</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOTO
+    ========================== -->
+    <section class="photo-section">
+
+        <div class="photo-frame">
+            <img
+                src="images/pilar.jpg"
+                alt="Pilu - Mis Quince Años"
+                class="main-photo"
+            >
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INFORMACIÓN DEL EVENTO
+    ========================== -->
+    <section class="section event-section">
+
+        <div class="star">✦</div>
+
+        <p class="section-small">GUARDÁ LA FECHA</p>
+
+        <h2>Información del evento</h2>
+
+
+        <div class="event-item">
+
+            <div class="event-icon">📅</div>
+
+            <h3>Fecha</h3>
+
+            <p>
+                Sábado<br>
+                <strong>31 de octubre de 2026</strong>
+            </p>
+
+        </div>
+
+
+        <div class="event-item">
+
+            <div class="event-icon">🕘</div>
+
+            <h3>Hora</h3>
+
+            <p>
+                <strong>21:00 horas</strong>
+            </p>
+
+            <p class="detail">
+                Te esperamos puntual
+            </p>
+
+        </div>
+
+
+        <div class="event-item">
+
+            <div class="event-icon">✨</div>
+
+            <h3>Dress Code</h3>
+
+            <p>
+                <strong>Caballeros:</strong> Traje
+            </p>
+
+            <p>
+                <strong>Damas:</strong> Vestido largo
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RSVP
+    ========================== -->
+    <section class="section rsvp-section">
+
+        <p class="section-small">RSVP</p>
+
+        <h2>Confirmá tu asistencia</h2>
+
+        <p class="section-description">
+            Completá tus datos para ayudarnos a preparar
+            cada detalle de esta noche especial.
+        </p>
+
+
+        <form
+            id="rsvpForm"
+            action="https://script.google.com/macros/s/AKfycbzPbLCxwDEjCRsXXB1ijcsSZRIH9dIlyNwt13Sc2UNu9EBy3vZU-1PKnXSDDvzo3Hup/exec"
+            method="POST"
+        >
+
+            <!-- NOMBRE -->
+
+            <label for="nombre">
+                Nombre
+            </label>
+
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+            >
+
+
+            <!-- APELLIDO -->
+
+            <label for="apellido">
+                Apellido
+            </label>
+
+            <input
+                type="text"
+                id="apellido"
+                name="apellido"
+                placeholder="Tu apellido"
+                required
+            >
+
+
+            <!-- ASISTENCIA -->
+
+            <label for="asistencia">
+                ¿Vas a asistir?
+            </label>
+
+            <select
+                id="asistencia"
+                name="asistencia"
+                required
+            >
+
+                <option value="">
+                    Seleccioná una opción
+                </option>
+
+                <option value="Sí">
+                    Sí, voy a asistir
+                </option>
+
+                <option value="No">
+                    No voy a poder asistir
+                </option>
+
+            </select>
+
+
+            <!-- ACOMPAÑANTES -->
+
+            <label for="acompanantes">
+                Cantidad de acompañantes
+            </label>
+
+            <select
+                id="acompanantes"
+                name="acompanantes"
+            >
+
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+
+            </select>
+
+
+            <!-- RESTRICCIÓN ALIMENTICIA -->
+
+            <label for="restriccion">
+                Restricción alimenticia
+            </label>
+
+            <select
+                id="restriccion"
+                name="restriccion"
+            >
+
+                <option value="Ninguna">
+                    Ninguna
+                </option>
+
+                <option value="Celíaco/a">
+                    Celíaco/a
+                </option>
+
+                <option value="Vegetariano/a">
+                    Vegetariano/a
+                </option>
+
+                <option value="Diabético/a">
+                    Diabético/a
+                </option>
+
+                <option value="Vegano/a">
+                    Vegano/a
+                </option>
+
+                <option value="Otra">
+                    Otra
+                </option>
+
+            </select>
+
+
+            <!-- OTRA RESTRICCIÓN -->
+
+            <div id="otraContainer" class="hidden">
+
+                <label for="otra">
+                    Especificá la restricción
+                </label>
+
+                <input
+                    type="text"
+                    id="otra"
+                    name="otra"
+                    placeholder="Escribí aquí"
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="main-button"
+            >
+                CONFIRMAR ASISTENCIA
+            </button>
+
+
+            <p
+                id="formMessage"
+                class="form-message"
+            ></p>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         UBICACIÓN
+    ========================== -->
+    <section class="section location-section">
+
+        <p class="section-small">
+            CÓMO LLEGAR
+        </p>
+
+        <h2>Ubicación</h2>
+
+        <div class="location-icon">
+            📍
+        </div>
+
+        <h3>
+            Club Fuerza Aérea
+        </h3>
+
+        <p>
+            <strong>Salón Cielo</strong>
+        </p>
+
+        <p>
+            Lido 1800<br>
+            11500 Montevideo<br>
+            Departamento de Montevideo
+        </p>
+
+
+        <div class="important-box">
+
+            <strong>Importante</strong>
+
+            <p>
+                El ingreso al salón será por
+                <strong>Calle Lido</strong>.
+            </p>
+
+        </div>
+
+
+        <a
+            class="main-button link-button"
+            href="https://www.google.com/maps/search/?api=1&query=Lido+1800+Montevideo+Uruguay"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            📍 VER UBICACIÓN
+        </a>
+
+
+        <a
+            class="secondary-button link-button"
+            href="https://www.google.com/maps/dir/?api=1&destination=Lido+1800+Montevideo+Uruguay"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            🚗 CÓMO LLEGAR
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         REGALOS
+    ========================== -->
+    <section class="section gifts-section">
+
+        <p class="section-small">
+            REGALOS
+        </p>
+
+        <h2>
+            Tu presencia es mi mejor regalo
+        </h2>
+
+        <p class="section-description">
+            Lo más importante para mí es poder compartir
+            este momento con vos.
+            Si además querés hacerme un regalo,
+            podés hacerlo mediante mi cuenta Prex.
+        </p>
+
+        <div class="gift-icon">
+            🎁
+        </div>
+
+
+        <div class="prex-card">
+
+            <p>Cuenta Prex</p>
+
+            <h3>Pilar Orrego</h3>
+
+            <p
+                id="prexNumber"
+                class="prex-number"
+            >
+                21100169
+            </p>
+
+            <button
+                type="button"
+                id="copyPrex"
+                class="secondary-button"
+            >
+                Copiar número
+            </button>
+
+            <p
+                id="copyMessage"
+                class="copy-message"
+            ></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SPOTIFY
+    ========================== -->
+    <section class="section spotify-section">
+
+        <p class="section-small">
+            PLAYLIST
+        </p>
+
+        <h2>
+            La playlist de Pilu
+        </h2>
+
+        <div class="music-icon">
+            🎵
+        </div>
+
+        <p class="section-description">
+            ¿Qué canción no puede faltar en mis quince?
+        </p>
+
+        <p>
+            Ayudame a crear la playlist de esta noche especial.
+        </p>
+
+        <!--
+        Más adelante reemplazaremos # por
+        el enlace de Spotify.
+        -->
+
+        <a
+            id="spotifyButton"
+            class="main-button link-button"
+            href="#"
+        >
+            🎧 AGREGAR UNA CANCIÓN
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         CIERRE
+    ========================== -->
+    <footer class="footer">
+
+        <div class="star">✦</div>
+
+        <h2>Te espero</h2>
+
+        <p>
+            Gracias por ser parte de este
+            momento tan especial.
+        </p>
+
+        <p class="signature">
+            Pilu
+        </p>
+
+        <p class="footer-date">
+            31 · 10 · 2026
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

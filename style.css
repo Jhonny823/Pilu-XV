@@ -1,0 +1,610 @@
+/* =========================================
+   XV PILU
+   31 · 10 · 2026
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+:root {
+    --background: #f8f4ef;
+    --background-alt: #eee5dc;
+    --text: #514943;
+    --accent: #b59a82;
+    --accent-dark: #8c7460;
+    --white: #ffffff;
+    --border: #d9cabc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+h1,
+h2,
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: clamp(4rem, 15vw, 8rem);
+    line-height: 0.9;
+    color: var(--accent-dark);
+}
+
+h2 {
+    font-size: clamp(2.3rem, 8vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 60px 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,0.95),
+            rgba(248,244,239,0.95)
+        );
+}
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    font-size: 22px;
+    color: var(--accent);
+    opacity: 0.6;
+}
+
+.hero::after {
+    content: "✦";
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 15px;
+    color: var(--accent);
+    opacity: 0.5;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 750px;
+}
+
+.small-title,
+.section-small {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent-dark);
+}
+
+.small-title {
+    margin-bottom: 30px;
+}
+
+.phrase {
+    max-width: 570px;
+    margin: 45px auto 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.star {
+    color: var(--accent);
+    font-size: 25px;
+    margin: 25px auto;
+}
+
+.main-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    letter-spacing: 7px;
+    color: var(--accent-dark);
+}
+
+
+/* =========================================
+   SECCIONES GENERALES
+========================================= */
+
+.section {
+    padding: 100px 25px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section-small {
+    margin-bottom: 15px;
+}
+
+.section-description {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+
+/* =========================================
+   CUENTA REGRESIVA
+========================================= */
+
+.countdown-section {
+    padding-top: 90px;
+    padding-bottom: 110px;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 650px;
+    margin: 50px auto 0;
+    gap: 15px;
+}
+
+.count-box {
+    border-right: 1px solid var(--border);
+    padding: 15px 5px;
+}
+
+.count-box:last-child {
+    border-right: none;
+}
+
+.count-box span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.3rem, 8vw, 4.5rem);
+    color: var(--accent-dark);
+    line-height: 1;
+}
+
+.count-box small {
+    display: block;
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.62rem;
+}
+
+
+/* =========================================
+   FOTO
+========================================= */
+
+.photo-section {
+    width: 100%;
+    padding: 20px 25px 100px;
+}
+
+.photo-frame {
+    max-width: 650px;
+    margin: auto;
+    position: relative;
+    padding: 12px;
+    border: 1px solid var(--border);
+}
+
+.photo-frame::before,
+.photo-frame::after {
+    content: "✦";
+    position: absolute;
+    color: var(--accent);
+    background: var(--background);
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.photo-frame::before {
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.photo-frame::after {
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   EVENTO
+========================================= */
+
+.event-section {
+    border-top: 1px solid var(--border);
+}
+
+.event-item {
+    margin: 60px auto;
+}
+
+.event-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.detail {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   RSVP
+========================================= */
+
+.rsvp-section {
+    max-width: 700px;
+}
+
+#rsvpForm {
+    max-width: 520px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+#rsvpForm label {
+    display: block;
+    margin: 25px 0 8px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+
+#rsvpForm input,
+#rsvpForm select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 14px 5px;
+    outline: none;
+}
+
+#rsvpForm input:focus,
+#rsvpForm select:focus {
+    border-bottom-color: var(--accent-dark);
+}
+
+#rsvpForm select {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.main-button,
+.secondary-button {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.main-button {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 40px auto 15px;
+    padding: 17px 25px;
+    border: 1px solid var(--accent-dark);
+    background: var(--accent-dark);
+    color: var(--white);
+}
+
+.main-button:hover {
+    background: transparent;
+    color: var(--accent-dark);
+}
+
+.secondary-button {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 15px auto;
+    padding: 16px 25px;
+    border: 1px solid var(--accent-dark);
+    background: transparent;
+    color: var(--accent-dark);
+}
+
+.secondary-button:hover {
+    background: var(--accent-dark);
+    color: var(--white);
+}
+
+.link-button {
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/* =========================================
+   MENSAJES DEL FORMULARIO
+========================================= */
+
+.form-message,
+.copy-message {
+    text-align: center;
+    min-height: 25px;
+    margin-top: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   UBICACIÓN
+========================================= */
+
+.location-section {
+    border-top: 1px solid var(--border);
+}
+
+.location-icon,
+.gift-icon,
+.music-icon {
+    font-size: 2.5rem;
+    margin: 20px auto;
+}
+
+.important-box {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.important-box strong:first-child {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   REGALOS
+========================================= */
+
+.gifts-section {
+    border-top: 1px solid var(--border);
+}
+
+.prex-card {
+    max-width: 450px;
+    margin: 40px auto 0;
+    padding: 45px 25px;
+    border: 1px solid var(--border);
+}
+
+.prex-card > p:first-child {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+}
+
+.prex-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.3rem;
+    letter-spacing: 4px;
+    color: var(--accent-dark);
+    margin: 20px 0;
+}
+
+
+/* =========================================
+   SPOTIFY
+========================================= */
+
+.spotify-section {
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    min-height: 70vh;
+    padding: 120px 25px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--background-alt);
+}
+
+.footer h2 {
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-style: italic;
+    color: var(--accent-dark);
+    margin: 30px 0 10px;
+}
+
+.footer-date {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+.section,
+.photo-section {
+    animation: fadeIn 0.9s ease both;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 95vh;
+        padding: 50px 20px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .phrase {
+        font-size: 1.25rem;
+    }
+
+    .section {
+        padding: 80px 22px;
+    }
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .count-box {
+        padding: 10px 2px;
+    }
+
+    .count-box span {
+        font-size: 2.5rem;
+    }
+
+    .count-box small {
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    .photo-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .main-button,
+    .secondary-button {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 4.3rem;
+    }
+
+    .main-date {
+        letter-spacing: 4px;
+    }
+
+    .count-box span {
+        font-size: 2rem;
+    }
+
+}
