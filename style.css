@@ -1,23 +1,19 @@
-/* =========================================
-   XV PILU
-   31 · 10 · 2026
-========================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-
-/* =========================================
-   CONFIGURACIÓN GENERAL
-========================================= */
-
 :root {
-    --background: #f8f4ef;
-    --background-alt: #eee5dc;
-    --text: #514943;
-    --accent: #b59a82;
-    --accent-dark: #8c7460;
-    --white: #ffffff;
-    --border: #d9cabc;
+    /* Paleta XV Pilu */
+
+    --cream: #FAF6F1;          /* Marfil cálido */
+    --cream-dark: #EFE3D8;     /* Champagne claro */
+
+    --brown: #493F3B;          /* Texto principal */
+    --brown-soft: #A9787F;     /* Rosa viejo */
+
+    --gold: #C3A37A;           /* Champagne dorado */
+
+    --line: #DCCBC3;           /* Líneas suaves */
+
+    --white: #FFF9F4;          /* Blanco cálido */
 }
 
 * {
@@ -31,19 +27,15 @@ html {
 }
 
 body {
-    background: var(--background);
-    color: var(--text);
+    margin: 0;
+    background: var(--cream);
+    color: var(--brown);
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     line-height: 1.7;
     text-align: center;
     overflow-x: hidden;
 }
-
-
-/* =========================================
-   TÍTULOS
-========================================= */
 
 h1,
 h2,
@@ -53,24 +45,38 @@ h3 {
 }
 
 h1 {
-    font-size: clamp(4rem, 15vw, 8rem);
+    font-size: clamp(4.5rem, 15vw, 8rem);
     line-height: 0.9;
-    color: var(--accent-dark);
 }
 
 h2 {
-    font-size: clamp(2.3rem, 8vw, 4rem);
-    line-height: 1.05;
-    margin-bottom: 30px;
+    font-size: clamp(2.7rem, 8vw, 4.5rem);
+    line-height: 1;
+    margin-bottom: 25px;
 }
 
 h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
 }
 
 p {
     margin-bottom: 15px;
+}
+
+.section-small,
+.small-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.decorative-line {
+    width: 55px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+    margin: 25px auto;
 }
 
 
@@ -79,39 +85,20 @@ p {
 ========================================= */
 
 .hero {
-    min-height: 100vh;
+    min-height: 100svh;
+    padding: 60px 25px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    padding: 60px 25px;
 
     background:
         radial-gradient(
-            circle at top,
-            rgba(255,255,255,0.95),
-            rgba(248,244,239,0.95)
+            circle at 50% 20%,
+            #ffffff 0%,
+            #f7f2ec 50%,
+            #eee3d8 100%
         );
-}
-
-.hero::before {
-    content: "✦";
-    position: absolute;
-    top: 8%;
-    left: 10%;
-    font-size: 22px;
-    color: var(--accent);
-    opacity: 0.6;
-}
-
-.hero::after {
-    content: "✦";
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    font-size: 15px;
-    color: var(--accent);
-    opacity: 0.5;
 }
 
 .hero-content {
@@ -119,59 +106,206 @@ p {
     max-width: 750px;
 }
 
-.small-title,
-.section-small {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--accent-dark);
+.hero h1 {
+    color: var(--brown-soft);
+    margin: 25px 0;
 }
 
-.small-title {
-    margin-bottom: 30px;
-}
+.hero .phrase {
+    max-width: 560px;
+    margin: 35px auto;
 
-.phrase {
-    max-width: 570px;
-    margin: 45px auto 25px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     font-style: italic;
     line-height: 1.6;
 }
 
-.star {
-    color: var(--accent);
-    font-size: 25px;
-    margin: 25px auto;
-}
-
 .main-date {
+    margin-top: 35px;
+
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     letter-spacing: 7px;
-    color: var(--accent-dark);
 }
 
 
 /* =========================================
-   SECCIONES GENERALES
+   FOTO PILU
 ========================================= */
 
-.section {
-    padding: 100px 25px;
+.photo-section {
+    padding: 0;
+    background: #111;
+}
+
+.photo-frame {
+    width: 100%;
     max-width: 900px;
     margin: auto;
 }
 
-.section-small {
-    margin-bottom: 15px;
+.main-photo {
+    width: 100%;
+    max-height: 100svh;
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
 }
 
-.section-description {
+
+/* =========================================
+   PÁGINA DEL EVENTO
+========================================= */
+
+.event-page {
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #68584c 0%,
+            #8d7766 45%,
+            #4d423b 100%
+        );
+
+    color: white;
+}
+
+.event-page::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,0.15),
+            transparent 40%
+        );
+}
+
+.event-overlay {
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 25px;
+
+    background:
+        linear-gradient(
+            rgba(30,24,20,0.15),
+            rgba(30,24,20,0.35)
+        );
+
+    position: relative;
+    z-index: 1;
+}
+
+.event-content {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+}
+
+.event-page .section-small {
+    color: rgba(255,255,255,0.75);
+}
+
+
+/* FECHA */
+
+.event-date {
+    margin: 45px auto 65px;
+}
+
+.event-day {
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+}
+
+.event-big-date {
+    margin: 10px 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 9vw, 4.8rem);
+    letter-spacing: 4px;
+    line-height: 1;
+}
+
+.event-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+}
+
+.punctual {
+    opacity: 0.75;
+    font-size: 0.85rem;
+}
+
+
+/* DRESS CODE */
+
+.dress-code {
     max-width: 600px;
-    margin: 0 auto 40px;
+    margin: 60px auto;
+    padding: 45px 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.dress-code h3 {
+    margin: 10px 0 35px;
+    font-size: 3rem;
+}
+
+.dress-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+.dress-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.35);
+}
+
+.dress-item {
+    padding: 5px;
+}
+
+.dress-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.dress-item > p:not(.dress-title):not(.dress-note) {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+}
+
+.dress-note {
+    margin-top: 12px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+
+    opacity: 0.85;
 }
 
 
@@ -179,22 +313,22 @@ p {
    CUENTA REGRESIVA
 ========================================= */
 
-.countdown-section {
-    padding-top: 90px;
-    padding-bottom: 110px;
+.countdown-area {
+    margin-top: 65px;
 }
 
 .countdown {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     max-width: 650px;
-    margin: 50px auto 0;
-    gap: 15px;
+    margin: 35px auto 0;
 }
 
 .count-box {
-    border-right: 1px solid var(--border);
-    padding: 15px 5px;
+    padding: 10px 5px;
+
+    border-right: 1px solid rgba(255,255,255,0.3);
 }
 
 .count-box:last-child {
@@ -203,88 +337,39 @@ p {
 
 .count-box span {
     display: block;
+
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.3rem, 8vw, 4.5rem);
-    color: var(--accent-dark);
+    font-size: clamp(2.3rem, 8vw, 4rem);
+
     line-height: 1;
 }
 
 .count-box small {
     display: block;
-    margin-top: 12px;
+
+    margin-top: 10px;
+
+    font-size: 0.55rem;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.62rem;
+
+    opacity: 0.75;
 }
 
 
 /* =========================================
-   FOTO
+   SECCIONES CLARAS
 ========================================= */
 
-.photo-section {
-    width: 100%;
-    padding: 20px 25px 100px;
-}
-
-.photo-frame {
-    max-width: 650px;
+.section {
+    max-width: 850px;
     margin: auto;
-    position: relative;
-    padding: 12px;
-    border: 1px solid var(--border);
+    padding: 110px 25px;
 }
 
-.photo-frame::before,
-.photo-frame::after {
-    content: "✦";
-    position: absolute;
-    color: var(--accent);
-    background: var(--background);
-    padding: 5px 10px;
-    font-size: 18px;
-}
-
-.photo-frame::before {
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.photo-frame::after {
-    bottom: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.main-photo {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-
-/* =========================================
-   EVENTO
-========================================= */
-
-.event-section {
-    border-top: 1px solid var(--border);
-}
-
-.event-item {
-    margin: 60px auto;
-}
-
-.event-icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.detail {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.2rem;
+.section-description {
+    max-width: 600px;
+    margin: 30px auto 45px;
 }
 
 
@@ -298,39 +383,44 @@ p {
 
 #rsvpForm {
     max-width: 520px;
-    margin: 40px auto 0;
+    margin: 50px auto 0;
+
     text-align: left;
 }
 
 #rsvpForm label {
     display: block;
-    margin: 25px 0 8px;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+
+    margin: 25px 0 7px;
+
+    font-size: 0.72rem;
     font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 #rsvpForm input,
 #rsvpForm select {
     width: 100%;
+
+    padding: 14px 5px;
+
     border: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--line);
+
+    outline: none;
+
     background: transparent;
-    color: var(--text);
+
+    color: var(--brown);
+
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    padding: 14px 5px;
-    outline: none;
 }
 
 #rsvpForm input:focus,
 #rsvpForm select:focus {
-    border-bottom-color: var(--accent-dark);
-}
-
-#rsvpForm select {
-    cursor: pointer;
+    border-bottom-color: var(--brown-soft);
 }
 
 .hidden {
@@ -344,61 +434,58 @@ p {
 
 .main-button,
 .secondary-button {
+    display: block;
+
+    width: 100%;
+    max-width: 380px;
+
+    margin: 35px auto 15px;
+    padding: 17px 25px;
+
     font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 500;
     letter-spacing: 2px;
-    font-size: 0.72rem;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
     cursor: pointer;
-    transition: 0.3s ease;
+
+    transition: 0.25s ease;
 }
 
 .main-button {
-    display: block;
-    width: 100%;
-    max-width: 380px;
-    margin: 40px auto 15px;
-    padding: 17px 25px;
-    border: 1px solid var(--accent-dark);
-    background: var(--accent-dark);
+    border: 1px solid var(--brown-soft);
+    background: var(--brown-soft);
     color: var(--white);
 }
 
 .main-button:hover {
     background: transparent;
-    color: var(--accent-dark);
+    color: var(--brown-soft);
 }
 
 .secondary-button {
-    display: block;
-    width: 100%;
-    max-width: 380px;
-    margin: 15px auto;
-    padding: 16px 25px;
-    border: 1px solid var(--accent-dark);
+    border: 1px solid var(--brown);
     background: transparent;
-    color: var(--accent-dark);
+    color: var(--brown);
 }
 
 .secondary-button:hover {
-    background: var(--accent-dark);
-    color: var(--white);
+    background: var(--brown);
+    color: white;
 }
-
-.link-button {
-    text-decoration: none;
-    text-align: center;
-}
-
-
-/* =========================================
-   MENSAJES DEL FORMULARIO
-========================================= */
 
 .form-message,
 .copy-message {
-    text-align: center;
     min-height: 25px;
+
     margin-top: 20px;
+
+    text-align: center;
+
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem;
 }
@@ -408,61 +495,62 @@ p {
    UBICACIÓN
 ========================================= */
 
-.location-section {
-    border-top: 1px solid var(--border);
+.location-page {
+    padding: 100px 20px;
+
+    background: var(--cream-dark);
 }
 
-.location-icon,
-.gift-icon,
-.music-icon {
-    font-size: 2.5rem;
-    margin: 20px auto;
+.location-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
 }
 
-.important-box {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 25px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.important-box strong:first-child {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.75rem;
-    margin-bottom: 10px;
-}
-
-
-/* =========================================
-   REGALOS
-========================================= */
-
-.gifts-section {
-    border-top: 1px solid var(--border);
-}
-
-.prex-card {
-    max-width: 450px;
-    margin: 40px auto 0;
-    padding: 45px 25px;
-    border: 1px solid var(--border);
-}
-
-.prex-card > p:first-child {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.7rem;
-}
-
-.prex-number {
+.location-room {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.3rem;
-    letter-spacing: 4px;
-    color: var(--accent-dark);
-    margin: 20px 0;
+    font-size: 1.6rem;
+}
+
+.location-note {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 10px 20px;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* MAPA */
+
+.map-container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 20px 50px rgba(70,55,45,0.12);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    min-height: 450px;
+}
+
+.location-buttons {
+    max-width: 500px;
+    margin: auto;
 }
 
 
@@ -471,64 +559,133 @@ p {
 ========================================= */
 
 .spotify-section {
-    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--line);
 }
 
 
 /* =========================================
-   FOOTER
+   REGALOS
+========================================= */
+
+.gifts-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.prex-card {
+    max-width: 450px;
+
+    margin: 50px auto 0;
+    padding: 45px 25px;
+
+    border: 1px solid var(--line);
+
+    background: rgba(255,255,255,0.35);
+}
+
+.prex-label {
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+}
+
+.prex-card h3 {
+    margin: 10px 0;
+}
+
+.prex-number {
+    margin: 20px 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.3rem;
+    letter-spacing: 4px;
+}
+
+/* =========================================
+   FOTO DE CIERRE
+========================================= */
+
+.closing-photo-section {
+    width: 100%;
+    padding: 0;
+    background: var(--cream);
+}
+
+.closing-photo {
+    display: block;
+
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: cover;
+}
+
+
+/* En celular la foto ocupa prácticamente
+   una pantalla completa */
+
+@media (max-width: 600px) {
+
+    .closing-photo-section {
+        height: 100svh;
+        overflow: hidden;
+    }
+
+    .closing-photo {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        /*
+        Como Pilu está en la parte inferior de la foto,
+        priorizamos esa zona al recortar.
+        */
+        object-position: center 70%;
+    }
+
+}
+/* =========================================
+   CIERRE
 ========================================= */
 
 .footer {
-    min-height: 70vh;
-    padding: 120px 25px 80px;
+    min-height: 80svh;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    background: var(--background-alt);
+    padding: 100px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #786658,
+            #4e443d
+        );
+
+    color: white;
 }
 
 .footer h2 {
-    margin-bottom: 20px;
+    margin: 10px 0 20px;
 }
 
 .signature {
+    margin: 35px 0 10px;
+
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-style: italic;
-    color: var(--accent-dark);
-    margin: 30px 0 10px;
 }
 
 .footer-date {
-    text-transform: uppercase;
-    letter-spacing: 4px;
     font-size: 0.7rem;
-}
-
-
-/* =========================================
-   ANIMACIONES
-========================================= */
-
-.section,
-.photo-section {
-    animation: fadeIn 0.9s ease both;
-}
-
-@keyframes fadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    letter-spacing: 4px;
 }
 
 
@@ -539,72 +696,202 @@ p {
 @media (max-width: 600px) {
 
     .hero {
-        min-height: 95vh;
+        min-height: 100svh;
         padding: 50px 20px;
     }
 
-    h1 {
+    .hero h1 {
         font-size: 5rem;
     }
 
-    h2 {
-        font-size: 2.5rem;
-    }
-
-    .phrase {
+    .hero .phrase {
         font-size: 1.25rem;
     }
 
-    .section {
-        padding: 80px 22px;
+    .photo-frame {
+        height: 100svh;
+    }
+
+    .main-photo {
+        height: 100%;
+        max-height: none;
+
+        object-fit: cover;
+    }
+
+    .event-overlay {
+        padding: 80px 20px;
+    }
+
+    .event-big-date {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .dress-grid {
+        gap: 18px;
+    }
+
+    .dress-code {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     .countdown {
-        gap: 5px;
-    }
-
-    .count-box {
-        padding: 10px 2px;
+        width: 100%;
     }
 
     .count-box span {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 
     .count-box small {
-        font-size: 0.5rem;
-        letter-spacing: 1px;
+        font-size: 0.48rem;
+        letter-spacing: 0.8px;
     }
 
-    .photo-section {
-        padding-left: 15px;
-        padding-right: 15px;
+    .section {
+        padding: 90px 22px;
     }
 
-    .main-button,
-    .secondary-button {
-        max-width: 100%;
+    .map-container iframe {
+        min-height: 380px;
     }
 
 }
 
 
 /* =========================================
-   PANTALLAS MUY PEQUEÑAS
+   PANTALLAS PEQUEÑAS
 ========================================= */
 
 @media (max-width: 380px) {
 
-    h1 {
+    .hero h1 {
         font-size: 4.3rem;
     }
 
-    .main-date {
-        letter-spacing: 4px;
+    .dress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dress-divider {
+        width: 60px;
+        height: 1px;
+        margin: auto;
     }
 
     .count-box span {
         font-size: 2rem;
+    }
+
+}
+/* =========================================
+   CONTROL DE MÚSICA
+========================================= */
+
+.music-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 12px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 30px;
+
+    background: rgba(169, 120, 127, 0.92);
+    color: var(--white);
+
+    box-shadow: 0 6px 25px rgba(50, 40, 40, 0.18);
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.music-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Pequeño símbolo gráfico, sin emoji */
+
+.music-icon {
+    position: relative;
+
+    display: block;
+
+    width: 14px;
+    height: 14px;
+
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+}
+
+.music-icon::after {
+    content: "";
+
+    position: absolute;
+    top: 3px;
+    left: 5px;
+
+    width: 0;
+    height: 0;
+
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 5px solid currentColor;
+}
+
+
+/* Cuando la música está reproduciéndose */
+
+.music-button.playing {
+    background: rgba(73, 63, 59, 0.92);
+}
+
+.music-button.playing .music-icon::after {
+    top: 3px;
+    left: 4px;
+
+    width: 4px;
+    height: 6px;
+
+    border: none;
+
+    border-left: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+}
+
+
+/* Celulares */
+
+@media (max-width: 600px) {
+
+    .music-button {
+        right: 14px;
+        bottom: 14px;
+
+        padding: 11px 14px;
+
+        font-size: 0.56rem;
     }
 
 }

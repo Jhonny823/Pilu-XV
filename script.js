@@ -258,3 +258,57 @@ spotifyButton.addEventListener(
 
     }
 );
+// ==========================================
+// MÚSICA DE FONDO
+// ==========================================
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+const musicText = document.getElementById("musicText");
+
+if (backgroundMusic && musicButton) {
+
+    backgroundMusic.volume = 0.45;
+
+    musicButton.addEventListener("click", async function () {
+
+        if (backgroundMusic.paused) {
+
+            try {
+
+                await backgroundMusic.play();
+
+                musicButton.classList.add("playing");
+                musicText.textContent = "PAUSAR";
+
+                musicButton.setAttribute(
+                    "aria-label",
+                    "Pausar música"
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "No se pudo reproducir la música:",
+                    error
+                );
+
+            }
+
+        } else {
+
+            backgroundMusic.pause();
+
+            musicButton.classList.remove("playing");
+            musicText.textContent = "MÚSICA";
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Reproducir música"
+            );
+
+        }
+
+    });
+
+}
